@@ -23,9 +23,9 @@ def create_nlp_pipeline():
     return nlp
 
 # Function takes the pipeline and runs text that has been converted into a doc object and makes predictions based on training.
-def train(nlp, training_data, n_iter=30):
+def train(nlp, train_data, n_iter=30):
     examples = []
-    for text, ann in training_data:
+    for text, ann in train_data:
         doc = nlp.make_doc(text)
         examples.append(Example.from_dict(doc, {"cats": ann["cats"]}))
     
