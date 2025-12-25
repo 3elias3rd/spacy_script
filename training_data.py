@@ -5,6 +5,8 @@ TRAIN_DATA = [
     ("good morning", {"cats": {"greeting": 1.0, "pricing": 0.0, "location": 0.0, "farewell": 0.0}}),
     ("hey", {"cats": {"greeting": 1.0, "pricing": 0.0, "location": 0.0, "farewell": 0.0}}),
     ("good evening", {"cats": {"greeting": 1.0, "pricing": 0.0, "location": 0.0, "farewell":0.0}}),
+    ("good afternoon", {"cats": {"greeting": 1.0, "pricing": 0.0, "location": 0.0, "farewell":0.0}}),
+    ("hiya", {"cats": {"greeting": 1.0, "pricing": 0.0, "location": 0.0, "farewell":0.0}}),
 
     # Farewell
     ("bye", {"cats": {"greeting": 0.0, "pricing": 0.0, "location": 0.0, "farewell": 1.0}}),
@@ -12,12 +14,16 @@ TRAIN_DATA = [
     ("see you later", {"cats": {"greeting": 0.0, "pricing": 0.0, "location": 0.0, "farewell": 1.0}}),
     ("thanks, bye", {"cats": {"greeting": 0.0, "pricing": 0.0, "location": 0.0, "farewell": 1.0}}),
     ("talk to you soon", {"cats": {"greeting": 0.0, "pricing": 0.0, "location": 0.0, "farewell": 1.0}}),
+    ("talk later", {"cats": {"greeting": 0.0, "pricing": 0.0, "location": 0.0, "farewell": 1.0}}),
+    ("thats all, thank you", {"cats": {"greeting": 0.0, "pricing": 0.0, "location": 0.0, "farewell": 1.0}}),
 
     # Location
     ("where are you located?", {"cats": {"greeting": 0.0, "pricing": 0.0, "location": 1.0, "farewell": 0.0}}),
     ("what is your address?", {"cats": {"greeting": 0.0, "pricing": 0.0, "location": 1.0, "farewell": 0.0}}),
     ("how do I get to your office?", {"cats": {"greeting": 0.0, "pricing": 0.0, "location": 1.0, "farewell": 0.0}}),
     ("are you near the mall?", {"cats": {"greeting": 0.0, "pricing": 0.0, "location": 1.0, "farewell": 0.0}}),
+    ("where is your gym exactly?", {"cats": {"greeting": 0.0, "pricing": 0.0, "location": 1.0, "farewell": 0.0}}),
+    ("are you located near Harare?", {"cats": {"greeting": 0.0, "pricing": 0.0, "location": 1.0, "farewell": 0.0}}),
     ("which city is the gym in?", {"cats": {"greeting": 0.0, "pricing": 0.0, "location": 1.0, "farewell": 0.0}}),
 
     # Pricing
@@ -27,4 +33,6 @@ TRAIN_DATA = [
     ("do you have any discounts?", {"cats": {"greeting": 0.0, "pricing": 1.0, "location": 0.0, "farewell": 0.0}}),
     ("what's the cost?", {"cats": {"greeting": 0.0, "pricing": 1.0, "location": 0.0, "farewell": 0.0}}),
     ("how much for a session", {"cats": {"greeting": 0.0, "pricing": 1.0, "location": 0.0, "farewell": 0.0}}),
+    ("how much is your membership", {"cats": {"greeting": 0.0, "pricing": 1.0, "location": 0.0, "farewell": 0.0}}),
+    ("do you have any promotions", {"cats": {"greeting": 0.0, "pricing": 1.0, "location": 0.0, "farewell": 0.0}}),
 ]
