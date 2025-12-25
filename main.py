@@ -23,7 +23,7 @@ def create_nlp_pipeline():
     return nlp
 
 # Function takes the pipeline and runs text that has been converted into a doc object and makes predictions based on training.
-def train(nlp, training_data, n_iter=20):
+def train(nlp, training_data, n_iter=30):
     examples = []
     for text, ann in training_data:
         doc = nlp.make_doc(text)
@@ -44,7 +44,7 @@ def train(nlp, training_data, n_iter=20):
             nlp.update(batch, sgd=optimizer, losses=losses)
 
         # Print Losses after each run through the data. (losses should go down over time)
-        print(f"Iteration: {epoch+1} | Loss: {losses.get('textcat', 0.0):.3f}")
+        print(f"Iteration: {epoch+1} | Loss: {losses.get('textcat', 0.0):.2f}")
 
     # Upload the model to the directory. Make sure MODEL_DIR exists and create if necessary
     MODEL_DIR.mkdir(parents=True, exist_ok=True)
@@ -53,7 +53,7 @@ def train(nlp, training_data, n_iter=20):
 
 if __name__ == "__main__":
     nlp = create_nlp_pipeline()
-    train(nlp, TRAIN_DATA, n_iter=20)
+    train(nlp, TRAIN_DATA, n_iter=30)
     
         
     
