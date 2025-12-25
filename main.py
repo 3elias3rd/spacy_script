@@ -6,7 +6,7 @@ from spacy.util import compounding, minibatch
 
 from training_data import TRAIN_DATA
 
-# Create path to model
+# Create path in the directory to model 
 MODEL_DIR = Path("model")/"nlp_intent_bot"
 
 # Funtion to create the pipeline with textcat componet and all 4 labels.
@@ -54,6 +54,3 @@ def train(nlp, training_data, n_iter=30):
 if __name__ == "__main__":
     nlp = create_nlp_pipeline()
     train(nlp, TRAIN_DATA, n_iter=30)
-    
-        
-    
