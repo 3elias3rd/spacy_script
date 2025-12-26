@@ -10,20 +10,21 @@ app = FastAPI(title="NLP Intent classifier")
 class PredictRequest(BaseModel):
     message: str
 
-class PredictRepsonse:
+class PredictResponse(BaseModel):
     intent: Optional[str]
     confidence: float
     fallback: bool
 
 try:
     classifier = IntentClassifier()
-except Exception:
+except Exception as e:
     classifier = None
-    load_error = str(Exception)
+    load_error = str(e)
+
 else:
     load_error = None
 
-@app.post("/predict", response_model=PredictRepsonse)
+@app.post("/predict", response_model=PredictResponse)
 def predict(req: PredictRequest):
 
     if classifier is None:
@@ -31,6 +32,6 @@ def predict(req: PredictRequest):
     result = classifier.predict(req.message)
     return result
 
-if __name__ == "__main__":
-    uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=False)
+# if __name__ == "__main__":
+#     uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=False)
     

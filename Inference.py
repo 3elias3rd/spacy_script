@@ -2,13 +2,13 @@ from pathlib import Path
 from typing import Dict, Any
 import spacy
 
-MODEL_DIR = Path("models")/"nlp_intent_model"
+MODEL_DIR = Path("model")/"nlp_intent_bot"
 FALLBACK_THRESHOLD = 0.6
 
 class IntentClassifier:
     def __init__(self, model_dir: Path=MODEL_DIR):
         if not model_dir.exists():
-            raise FileExistsError(f"Model {model_dir}has not been trained and uploaded to the directory.")
+            raise FileExistsError(f"Model {model_dir} has not been trained and uploaded to the directory.")
         
         self.nlp =spacy.load(model_dir)
 

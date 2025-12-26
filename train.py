@@ -11,7 +11,7 @@ MODEL_DIR = Path("model")/"nlp_intent_bot"
 
 # Funtion to create the pipeline with textcat componet and all 4 labels.
 def create_nlp_pipeline():
-    nlp = spacy.load("en")
+    nlp = spacy.blank("en")
 
     textcat = nlp.add_pipe("textcat", last=True)
 
@@ -29,7 +29,7 @@ def train(nlp, train_data, n_iter=30):
         doc = nlp.make_doc(text)
         examples.append(Example.from_dict(doc, {"cats": ann["cats"]}))
     
-    print("Training is now begining")
+    print("Training is now beginning")
 
     optimizer = nlp.initialize(lambda:examples)
 
@@ -49,7 +49,7 @@ def train(nlp, train_data, n_iter=30):
     # Upload the model to the directory. Make sure MODEL_DIR exists and create if necessary
     MODEL_DIR.mkdir(parents=True, exist_ok=True)
     nlp.to_disk(MODEL_DIR)
-    print(f"Model trained and uploaded to {MODEL_DIR.resolve()}")
+    print(f"Model trained and saved to {MODEL_DIR.resolve()}")
 
 if __name__ == "__main__":
     nlp = create_nlp_pipeline()
